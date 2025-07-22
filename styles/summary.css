@@ -1,0 +1,213 @@
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user{
+    margin-left: 168px;
+    margin-top: 50px;
+    width: 385px;
+    height: 136px;
+}
+
+.greet-user{
+    display: flex;
+    font-weight: 500;
+    font-size: 47px;
+    width: 385px;
+    color: #2A3647;
+}
+
+.user-name{
+    font-weight: bold;
+    font-size: 64px;
+    color: #29ABE2;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 206px;
+    margin-left: 328px;
+    max-width: 625px;
+    height: 73px;
+    gap: 30px;
+}
+
+.pipe {
+    width: 3px;
+    height: 59px;
+    background-color: #29ABE2;
+}
+
+.title-section span{
+    font-size: 27px;
+    font-weight: 400;
+    color: #2A3647;
+}
+
+.title-section h1 {
+    font-size: 61px;
+    color: #000000;
+    font-weight: bold;
+    /*font-family: inter;*/
+}
+
+.summary-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 328px;
+    width: 560px;
+    height: 562px;
+    top: 562px;
+    left: 328px;
+}
+
+.summary-section .todo-subsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 560px;
+}
+
+.display-todo {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #ffff;
+    width: 246px;
+    height: 168px;
+    gap: 18px;
+}
+
+.display-done {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #ffff;
+    width: 246px;
+    height: 168px;
+    gap: 18px;
+}
+
+.default-img {
+    width: 69px;
+    height: 69px;
+}
+
+.urgency-subsection {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 560px;
+    height: 168px;
+    border-radius: 30px;
+    background-color: #ffff;
+    margin-top: 30px;
+    gap: 50px;
+}
+
+.display-urgency{
+    width: 130px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+}
+
+.urgency-pipe{
+    width: 2px;
+    height: 102px;
+    background-color: #D1D1D1;
+}
+
+.display-deadline{
+    text-align: center;
+}
+
+.task-subsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 560px;
+    height: 168px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.awaiting-feedback, .in-progress, .in-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color: #ffff;
+    width: 168px;
+    height: 168px;
+}
+
+.semi-bold {
+    font-weight: 600;
+    font-size: 64px;
+}
+
+.menu-section span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.menu-item span{
+    font-size: 16px;
+    font-weight: 400;
+    color: #A8A8A8;
+}
+
+.hover-img {
+    display: none;
+}
+
+.element-hover {
+    cursor: pointer;
+}
+
+.element-hover .hover-img{
+    display: none;
+}
+
+
+.element-hover:hover .default-img{
+    display: none;
+}
+
+.element-hover:hover .hover-img{
+    display: block;
+}
+
+.element-hover:hover {
+    background-color: #2C3646;
+    color: #FFFFFF !important;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/board.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/side_menu.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/media.css"/>
+    <link rel="stylesheet" href="./styles/summary.css" />
+    <title>Join</title>
+</head>
+<body>
+    <div class="header-content">
+        <div class="header-inner">
+            <h1 class="header-title">Kanban Project Management Tool</h1>
+            <div class="header-profile">
+                <div class="help-container" id="helpContainer">
+                    <div class="help-icon" onclick="toggleHelpDropdown()">
+                        <img src="./assets/img/icons/header-side-menu/help.png" alt="Help Icon">
+                    </div>
+                    <div id="helpDropdown" class="help-dropdown">
+                        <a href="" class="dropdown-item">Impressum</a>
+                        <a href="" class="dropdown-item">Datenschutz</a>
+                    </div>
+                </div>
+                <div class="profile-container" id="profileContainer">
+                    <img src="./assets/profile.jpg"  class="profile-img" onclick="toggleProfileDropdown()" alt="Profile"/>
+
+                    <div id="profileDropdown" class="profile-dropdown">
+                        <a href="" class="dropdown-item mobile-only d_none">Impressum</a>
+                        <a href="" class="dropdown-item mobile-only d_none">Datenschutz</a>
+                        <a href="login.html" class="dropdown-item">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="title-section">
+            <h1>Join 360</h1>
+            <div class="pipe"></div>
+            <span>Key Metrics at a Glance</span>
+        </div>
+
+        <div class="main-container">
+            <div class="summary-section">
+                <div class="todo-subsection">
+                    
+                    <a href="board.html" class="display-todo element-hover">
+                        <img class="default-img" src="./assets/img/icons/summary/edit-icon.png" alt="Edit ToDo">
+                        <img class="hover-img" src="./assets/img/icons/summary/edit-icon-hover.png" alt="Edit ToDo">
+                        <div>
+                            <h1>1</h1>
+                            <span>To-do</span>
+                        </div>
+                    </a>
+
+                    <a href="board.html" class="display-done element-hover">
+                        <img class="default-img" src="./assets/img/icons/summary/done-icon.png" alt="Done">
+                        <img class="hover-img" src="./assets/img/icons/summary/done-icon-hover.png" alt="Done">
+                        <div>
+                            <h1>1</h1>
+                            <span>Done</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="board.html" class="urgency-subsection element-hover">
+                    <div class="display-urgency">
+                        <img src="./assets/img/icons/summary/urgency-icon.png" alt="Urgency">
+                        <div class="urgency-counter">
+                            <h1>1</h1>
+                            <span>Urgent</span>
+                        </div>
+                    </div>
+
+                    <div class="urgency-pipe"></div>
+                    <div class="display-deaadline">
+                        <h1 id="deadline">21.07.2025</h1>
+                        <span>Upcoming deadline</span>
+                    </div>
+                </a>
+                <div class="task-subsection">
+                    <a href="board.html" class="in-board element-hover">
+                        <h1 class="semi-bold" id="inBord">5</h1>
+                        <span>Tasks <br> in Board</span>
+                    </a>
+
+                    <a href="board.html" class="in-progress element-hover">
+                        <h1 class="semi-bold" id="inProgress">5</h1>
+                        <span>Tasks <br> in progress</span>
+                    </a>
+
+                    <a href="board.html" class="awaiting-feedback element-hover">
+                        <h1 class="semi-bold" id="awaitingFeedback">5</h1>
+                        <span>Awaiting  <br> feedback</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="user">
+                <span class="greet-user" id="greetUser">Good morning,</span>
+                <h1 class="user-name" id="userName">Sofia Müller</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-menu background-side-menu">
+        <div class="logo-section">
+            <img src="./assets/img/logo/logo-light.png" alt="Logo" class="logo-side-menu-img" />
+        </div>
+
+        <div class="menu-section">
+            <a href="summary.html" class="menu-item active">
+                <span class="menu-icon">
+                    <img src="./assets/img/icons/header-side-menu/summary.svg" alt="Summary">
+                </span>
+                <span>Summary</span>
+            </a>
+
+            <a href="add_task.html" class="menu-item">
+                <span class="menu-icon">
+                    <img src="./assets/img/icons/header-side-menu/add-task.svg" alt="Add Task">
+                </span>
+                <span>Add Task</span>
+            </a>
+
+            <a href="./board.html" class="menu-item">
+                <span class="menu-icon">
+                    <img src="./assets/img/icons/header-side-menu/board.svg" alt="Board">
+                </span>
+                <span>Board</span>
+            </a>
+            
+            <a href="add_contact.html" class="menu-item">
+                <span class="menu-icon">
+                    <img src="./assets/img/icons/header-side-menu/contacts.svg" alt="Contacts">
+                </span>
+                <span>Contacts</span>
+            </a>
+        </div>
+
+        <div class="notice-side-menu">
+            <a href="" class="menu-item">
+                <span>Privacy policy</span>
+            </a>
+            <a href="" class="menu-item">
+                <span>Legal notice</span>
+            </a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
