@@ -275,7 +275,7 @@ input:focus {
 
 @media(max-width:700px) {
   .logo-animated.shrink {
-    top: 69px;
+    top: 46px;
     left: 105px;
   }
 
@@ -327,8 +327,8 @@ input:focus {
   }
 
   .logo-animated.shrink {
-    top: 69px;
-    left: 120px;
+    top: 50px;
+    left: 90px;
   }
 
   .logo-animated {
@@ -345,8 +345,8 @@ input:focus {
 
 @media(max-width:500px) {
   .logo-animated.shrink {
-    top: 85px;
-    left: 65px;
+    top: 50px;
+    left: 40px;
   }
 
   .logo-animated {

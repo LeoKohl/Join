@@ -1,155 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0" />
-		<title>Join</title>
-		<link
-			rel="icon"
-			href="assets/img/Capa1.svg"
-			type="image/svg+xml" />
-		<link
-			rel="stylesheet"
-			href="styles/login.css" />
-		<link
-			rel="stylesheet"
-			href="styles/standard.css" />
-		<script src="./scripts/firebase.js"></script>
-	</head>
 
-	<body>
-		<img
-			src="assets/img/Capa1.svg"
-			alt="Logo"
-			class="logo-animated"
-			id="logo" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Join</title>
+	<link rel="icon" href="assets/img/Capa1.svg" type="image/svg+xml" />
+	<link rel="stylesheet" href="styles/login.css" />
+	<link rel="stylesheet" href="styles/standard.css" />
+	<script src="./scripts/firebase.js"></script>
+</head>
 
-		<div
-			class="intro"
-			id="intro">
-			<div
-				class="white-overlay"
-				id="whiteOverlay"></div>
-		</div>
+<body>
+	<img src="assets/img/Capa1.svg" alt="Logo" class="logo-animated" id="logo" />
 
-		<div
-			class="wrapper"
-			id="mainContent">
-			<div class="top-row">
-				<div class="top-right">
-					<span class="not-a-user">Not a Join user?</span>
-					<a
-						class="signup-btn"
-						href="register.html"
-						>Sign up</a
-					>
-				</div>
-			</div>
+	<div class="intro" id="intro">
+		<div class="white-overlay" id="whiteOverlay"></div>
+	</div>
 
-			<div class="container display-standard">
-				<div class="login-box display-standard">
-					<h2>Log in</h2>
-					<div class="underline">
-						<img
-							src="./assets/img/icons/login/underline.svg"
-							alt="" />
-					</div>
-					<form
-						onsubmit="login(); return false;"
-						class="form-box display-standard"
-						id="login-form">
-						<div class="input-box">
-							<div class="input-group">
-								<div class="input-wrapper">
-									<input
-										id="email"
-										type="text"
-										placeholder="Email" />
-									<img
-										class="icon"
-										src="./assets/img/icons/login/mail.svg"
-										alt="" />
-								</div>
-							</div>
-						</div>
-
-						<div class="input-box">
-							<div class="input-group">
-								<div
-									id="password-wrapper"
-									class="input-wrapper">
-									<input
-										id="password"
-										type="password"
-										placeholder="Password" />
-									<img
-										id="lock-password"
-										class="icon password-icon"
-										src="./assets/img/icons/login/lock.svg"
-										alt="Password Closed Icon" />
-									<img
-										id="visibility-off-password"
-										class="icon password-icon d-none"
-										src="./assets/img/icons/register/visibility_off.svg"
-										alt="Visibility off Icon" />
-									<img
-										id="visibility-on-password"
-										class="icon password-icon d-none"
-										src="./assets/img/icons/register/visibility.svg"
-										alt="Visibility off Icon" />
-								</div>
-							</div>
-						</div>
-
-						<small
-							id="error-msg"
-							class="error-message"
-							>Check your email and password. Please try again.</small
-						>
-
-						<div class="buttons display-standard">
-							<button
-								id="login-in"
-								type="submit"
-								class="login-btn display-standard">
-								Log in
-							</button>
-							<button
-								id="guest-login"
-								type="button"
-								class="guest-btn display-standard">
-								Guest Log in
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="top-right-down">
+	<div class="wrapper" id="mainContent">
+		<div class="top-row">
+			<div class="top-right">
 				<span class="not-a-user">Not a Join user?</span>
-				<a
-					href="register.html"
-					class="signup-btn"
-					>Sign up</a
-				>
-			</div>
-			<div class="footer display-standard">
-				<a
-					id="privacy-policy"
-					href="./privacyPolicy.html"
-					>Privacy Policy</a
-				>
-				<a
-					id="legal-notice"
-					href="./legalNotice.html"
-					>Legal notice</a
-				>
+				<a class="signup-btn" href="register.html">Sign up</a>
 			</div>
 		</div>
 
-		<script src="./scripts/login-register.js"></script>
-		<script src="scripts/login.js"></script>
-	</body>
+		<div class="container display-standard">
+			<div class="login-box display-standard">
+				<h2>Log in</h2>
+				<div class="underline">
+					<img src="./assets/img/icons/login/underline.svg" alt="Underline Blue Icon" />
+				</div>
+				<form onsubmit="login(); return false;" class="form-box display-standard" id="login-form">
+					<div class="input-box">
+						<div class="input-group">
+							<div class="input-wrapper">
+								<label for="email"></label>
+								<input id="email" type="text" placeholder="Email" />
+								<img class="icon" src="./assets/img/icons/login/mail.svg" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="input-box">
+						<div class="input-group">
+							<div id="password-wrapper" class="input-wrapper">
+								<input id="password" type="password" placeholder="Password" />
+								<img id="lock-password" class="icon password-icon"
+									src="./assets/img/icons/login/lock.svg" alt="Password Closed Icon" />
+								<img id="visibility-off-password" class="icon password-icon d-none"
+									src="./assets/img/icons/register/visibility_off.svg" alt="Visibility hidden Icon" />
+								<img id="visibility-on-password" class="icon password-icon d-none"
+									src="./assets/img/icons/register/visibility.svg" alt="Visibility visible Icon" />
+							</div>
+						</div>
+					</div>
+
+					<small id="error-msg" class="error-message">Check your email and password. Please try again.</small>
+
+					<div class="buttons display-standard">
+						<button id="login-in" type="submit" class="login-btn display-standard">
+							Log in
+						</button>
+						<button id="guest-login" type="button" class="guest-btn display-standard">
+							Guest Log in
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="top-right-down">
+			<span class="not-a-user">Not a Join user?</span>
+			<a href="register.html" class="signup-btn">Sign up</a>
+		</div>
+		<div class="footer display-standard">
+			<a id="privacy-policy" href="./privacyPolicy.html">Privacy Policy</a>
+			<a id="legal-notice" href="./legalNotice.html">Legal notice</a>
+		</div>
+	</div>
+
+	<script src="./scripts/login-register.js"></script>
+	<script src="scripts/login.js"></script>
+</body>
+
 </html>
