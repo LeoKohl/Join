@@ -9,7 +9,7 @@ async function loadData(path ="") {
 async function postData(path="", data={}) {
     let response = await fetch(BASE_URL + path +".json",{
         method: "POST",
-        header: {
+        headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
@@ -27,7 +27,7 @@ async function deleteData(path="") {
 async function putData(path="", data={}) {
      let response = await fetch(BASE_URL + path +".json",{
         method: "PUT",
-        header: {
+        headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)

@@ -1,13 +1,11 @@
 // Load tasks from Firebase and return them as an array
 async function loadTasks() {
     const data = await loadData("tasks");
-
-    if (data) {
-        return Object.values(data);
-    } 
-    else {
-        return [];
+    if (!data) return [];
+    if (Array.isArray(data)) {
+        return data.filter(task => task !== null && typeof task === "object");
     }
+    return Object.values(data);
 }
 
 // Determine the status of a single task using switch
