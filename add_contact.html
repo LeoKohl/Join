@@ -218,6 +218,12 @@
 
     <!-- Modal Overlay for Edit Contact -->
     <div class="modal-overlay" id="editModalOverlay"></div>
+
+    <!-- Confirmation Modal -->
+    <div id="contactCreatedModal" class="contact-created-modal">
+      Contact successfully created
+    </div>
+
     <!-- Edit Contact Modal (hidden by default) -->
     <div class="form-container" id="editFormContainer">
       <button class="close-btn" onclick="hideEditForm()">
@@ -289,5 +295,20 @@
         </form>
       </div>
     </div>
+    <!-- Mobile Edit Dropdown (hidden by default, shown via JS) -->
+    <button
+      id="mobileEditBtn"
+      class="mobile-edit-btn"
+      style="display: none"
+      onclick="event.stopPropagation(); toggleMobileEditDropdown(window._lastMobileEditIdx)"
+    >
+      <img src="./assets/img/icons/add-contact/edit-button.svg" alt="Edit" />
+    </button>
+    <!-- Mobile Edit Dropdown (hidden by default, shown via JS) -->
+    <div
+      id="mobileEditDropdown"
+      class="mobile-edit-dropdown"
+      style="display: flex"
+    ></div>
   </body>
 </html>
