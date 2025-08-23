@@ -44,4 +44,3 @@ function getAssignedNameTemplate(initials, name, color) {
   `;
 }
 
-

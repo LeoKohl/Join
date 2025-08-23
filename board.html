@@ -28,6 +28,7 @@
     <script src="./scripts/big-card-templates.js"></script>
     <script src="./scripts/board-cards-templates.js"></script>
     <script src="./scripts/board-card.js"></script>
+    <script src="./scripts/edit-add-task.js" defer></script>
     <script src="./scripts/big-card.js"></script>
     <script src="./scripts/board-drag-and-drop.js"></script>
     <script src="./script.js"></script>
@@ -73,7 +74,7 @@
           </div>
         </div>
       </div>
-    </div>
+   
   </header>
   <!--End of Header content-->
   <!--Side-menu-->
@@ -351,8 +352,15 @@
   </div>
 
   <div id="add-task-overlay" class="d-none overlay-add-task-big-card">
-    <div class="add-task-content"><!-- Dein Add-Task-Formular --></div>
+  <div class="add-task-content">
+    <!-- dein Add-Task-Formular -->
+    <div class="overlay-header">
+      <button type="button" onclick="closeEditTaskOverlay()">X</button>
+    </div>
+    <!-- Rest vom Formular -->
   </div>
+</div>
+
 
 
 </body>

@@ -57,7 +57,8 @@ function bigCardTemplate(id, category, title, desc, due, prio, avatarsHTML, subt
           <path d="M1.14453 0V24" stroke="#A8A8A8" />
         </svg>
 
-        <div class="edit-pen-big-card" onclick="editBigCard()">
+     <div class="edit-pen-big-card" onclick="openEditTaskOverlay('${id}')">
+
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_75592_9969" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="24">
               <rect x="0.144531" width="24" height="24" fill="#D9D9D9" />
