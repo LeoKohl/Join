@@ -58,3 +58,11 @@ function getContactDetailsTemplate(contact, colorClass, initials, idx) {
         </div>
     `;
 }
+
+function getKanbanEmptyMessage(headerText) {
+	return /* HTML */ ` <div class="empty-msg">No tasks ${headerText}</div>`;
+}
+
+function getTaskPlaceholderTemplate() {
+    return /* HMTL */ `<div class="placeholder"></div>`
+}

@@ -24,3 +24,12 @@
 .drag-over {
     background-color: #E7E7E7 !important;
 }
+
+.placeholder {
+	width: 252px;
+	height: 263px;
+	border: 1px dashed grey;
+	border-radius: 10px;
+	justify-self: center;
+	margin: 0 auto;
+}

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./styles/media-query-add-task.css" />
     <link rel="stylesheet" href="./styles/board-add-task-template.css" />
     <link rel="stylesheet" href="./styles/media-query-board.css" />
+    <script src="./scripts/template.js"></script>
     <script src="./scripts/add-task-templates.js"></script>
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/input.js"></script>
@@ -29,7 +30,7 @@
     <script src="./scripts/board-cards-templates.js"></script>
     <script src="./scripts/board-card.js"></script>
     <script src="./scripts/big-card.js"></script>
-    <script src="./scripts/board-drag-and-drop.js"></script>
+    <script src="./scripts/board-drag-and-drop-sample.js"></script>
     <script src="./script.js"></script>
     <script src="./scripts/add_task.js" defer></script>
     <script src="./scripts/add_task_button.js" defer></script>
@@ -145,7 +146,7 @@
     </section>
     <section>
       <div class="drag-board">
-        <div class="board-column" id="open">
+        <div class="board-column" id="open" data-column-index="0">
           <div class="column-header">
             <span>To do</span>
             <button class="add-board-btn" onclick="addBoardTask('open')">
@@ -154,7 +155,7 @@
           </div>
           <div class="tasks-list" id="tasks-list-open"></div>
         </div>
-        <div class="board-column" id="inprogress">
+        <div class="board-column" id="inprogress"  data-column-index="1">
           <div class="column-header">
             <span>In progress</span>
             <button class="add-board-btn" onclick="addBoardTask('inprogress')">
@@ -163,7 +164,7 @@
           </div>
           <div class="tasks-list" id="tasks-list-inprogress"></div>
         </div>
-        <div class="board-column" id="awaitfeedback">
+        <div class="board-column" id="awaitfeedback"  data-column-index="2">
           <div class="column-header">
             <span>Await feedback</span>
             <button class="add-board-btn" onclick="addBoardTask('awaitfeedback')">
@@ -172,7 +173,7 @@
           </div>
           <div class="tasks-list" id="tasks-list-awaitfeedback"></div>
         </div>
-        <div class="board-column" id="done">
+        <div class="board-column" id="done"  data-column-index="3">
           <div class="column-header">
             <span>Done</span>
           </div>

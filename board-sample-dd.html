@@ -61,10 +61,19 @@
 				margin: 0 auto;
 			}
 			.empty-msg {
-				color: #888;
-				font-style: italic;
-				text-align: center;
-				justify-self: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 48px;
+				width: 246px;
+				background: #e7e7e7;
+				border: 1px dashed #a8a8a8;
+				border-radius: 10px;
+				box-shadow: 0px 0px 4px 0px #00000029;
+				color: #a8a8a8;
+				font-size: 16px;
+				font-weight: 500;
+				pointer-events: none;
 			}
 		</style>
 	</head>
@@ -282,9 +291,17 @@
 					);
 					let msg = list.querySelector(".empty-msg");
 					if (tasks.length === 0) {
-						if (msg) msg.classList.remove("d-none");
+						if (!msg) {
+							msg = document.createElement("div");
+							msg.className = "empty-msg";
+							// Spaltenname aus dem übergeordneten Header holen
+							let header = list.parentElement.querySelector(".column-header");
+							msg.textContent =
+								"No Tasks in " + (header ? header.textContent : "");
+							list.appendChild(msg);
+						}
 					} else {
-						msg.classList.add("d-none");
+						if (msg) msg.remove();
 					}
 				});
 			}
@@ -295,7 +312,7 @@
 			// Drag Events für Tasks
 			document.querySelectorAll(".task").forEach((task) => {
 				task.addEventListener("dragstart", (e) => {
-					dragged = task;
+					dragged = event.target;
 					setTimeout(() => (task.style.display = "none"), 0);
 
 					// Placeholder und .empty-msg in benachbarten Spalten anzeigen/verstecken
