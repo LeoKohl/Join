@@ -13,9 +13,9 @@ function cardRender(displayTaskId, task, assignedAvatarsHTML, progressPercent, m
   return `
     <div onclick="openBigCard('${displayTaskId}')">
       <h3 class="task-category ${getCategoryClass(task.category)}">
-        ${task.category ? task.category : "Ohne Kategorie"}
+        ${task.category ? task.category : "No category"}
       </h3>
-      <h4 class="task-title">${task.title || "Ohne Titel"}</h4>
+      <h4 class="task-title">${task.title || "No titel"}</h4>
       <p class="task-description">${task.description || ""}</p>
 
       <div class="subtask-counter">
