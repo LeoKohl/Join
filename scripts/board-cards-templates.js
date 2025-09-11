@@ -34,7 +34,9 @@ function cardRender(
 							class="progress-bar"
 							style="width:${progress.progressPercent}%"></div>
 					</div>
-					<span class="counter">${progress.total}/${progress.maxSubtasks} Subtasks</span>
+					<span class="counter"
+						>${progress.total}/${progress.maxSubtasks} Subtasks</span
+					>
 				</div>
 
 				<div class="board-card-footer">
@@ -42,13 +44,17 @@ function cardRender(
 					<div class="priority">${getPriorityIcon(task.priority)}</div>
 				</div>
 			</div>
+			<img
+				class="swap-icon"
+				src="./assets/img/icons/board/swap-status.svg"
+				alt="swap task icon" />
 		</div>
 	`;
 }
 
 
 function priorityRender(cleanPriority) {
-  return `
+	return `
         <img src="./assets/img/icons/priority-icons/${cleanPriority}.png" 
                 alt="${cleanPriority} priority" 
                 class="priority-icon" />
@@ -56,4 +62,29 @@ function priorityRender(cleanPriority) {
 
 }
 
+function getSwitchDropdownTemplate(buttonsHTML) {
+	return /* HTML */ ` <div class="switch-dropdown">
+		<p>Move To</p>
+		${buttonsHTML}
+	</div>`;
+}
 
+function getArrowUpBtnTemplate(columnIndex, targetCard) {
+	return /* HTML */ `<button
+		class="switch-dropdown-btn"
+		onclick="switchColumn(event, ${columnIndex})">
+		<img src="./assets/img/icons/board/arrow-upward.svg" alt="arrow upward" />
+		${shortStatus[columnIndex]}
+	</button>`;
+}
+
+function getArrowDownBtnTemplate(columnIndex, targetCard) {
+	return /* HTML */ `<button
+		class="switch-dropdown-btn"
+		onclick="switchColumn(event, ${columnIndex})">
+		<img
+			src="./assets/img/icons/board/arrow-downward.svg"
+			alt="arrow downward" />
+		${shortStatus[columnIndex]}
+	</button>`;
+}

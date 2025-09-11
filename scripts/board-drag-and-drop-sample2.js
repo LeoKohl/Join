@@ -54,6 +54,7 @@ function addEmptyMessage(list) {
 function renderWithNoTasksAreas() {
     updateEmptyMessages();
     addDragEventsToCards();
+    addSwitchEventsToCards();
 }
 
 // === Drag Setup ===
@@ -315,20 +316,19 @@ function updateTaskData(e) {
     if (isValidDropZone(dropZone, fromColumn) && fromColumn !== targetColumn) {
         let targetColumnId = targetColumn.dataset.columnIndex;
         moveTaskToCategory(
-            displayedTasks[draggedEl.dataset.displayedTasksId],
             categories[targetColumnId],
             draggedEl
         );
     }
 }
 
-function isValidDropZone(dropZoneElement, fromCol) {
+function isValidDropZone(dropZoneElement, fromColumn) {
     if (!draggedEl) return false;
-    if (!fromCol || !dropZoneElement) return false;
+    if (!fromColumn || !dropZoneElement) return false;
     if (!dropZoneElement.classList.contains('placeholder')) return false;
     let targetColumn = dropZoneElement.closest('.board-column');
     let targetColumnId = targetColumn.dataset.columnIndex;
-    let sourceIndex = fromCol.dataset.columnIndex;
+    let sourceIndex = fromColumn.dataset.columnIndex;
     return Math.abs(sourceIndex - targetColumnId) === 1;
 }
 
@@ -339,10 +339,10 @@ function isValidDropZone(dropZoneElement, fromCol) {
  * @param {string} newStatus - The new status/category for the task.
  * @param {HTMLElement} taskElement - The DOM element of the task.
  */
-async function moveTaskToCategory(taskData, newStatus, taskElement) {
-    if (!taskData) return;
+async function moveTaskToCategory(newStatus, taskElement) {
     let tasksId = taskElement.dataset.tasksId;
     let displayedTasksId = taskElement.dataset.displayedTasksId;
+    let taskData = displayedTasks[displayedTasksId];
     updateTask(taskData, newStatus);
     tasks[tasksId] = taskData;
     displayedTasks[displayedTasksId] = taskData;
