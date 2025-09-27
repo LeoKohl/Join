@@ -111,18 +111,17 @@ function updateDOM(id, value) {
  * @function
  */
     function updateSummary() {
-  
-    updateDOM("board-counter", countTasksByStatus(tasks, "todo"));
-    updateDOM("done-counter", countTasksByStatus(tasks, "done"));
-    updateDOM("inProgress-counter", countTasksByStatus(tasks, "in-progress"));
-    updateDOM("awaitingFeedback-counter", countTasksByStatus(tasks, "feedback"));
-    updateDOM("urgency-counter", countUrgentTasks(tasks));
-    updateDOM("inBord-counter", tasks.length);
-    const deadline = findEarliestUrgentDate(tasks);
-    updateDOM("deadline", deadline ? new Date(deadline).toLocaleDateString("de-DE") : "No");
-    document.querySelector(".summary-section").style.visibility = "visible";
-    document.querySelector(".title-section").style.visibility = "visible";
-}
+        updateDOM("board-counter", countTasksByStatus(tasks, "todo"));
+        updateDOM("done-counter", countTasksByStatus(tasks, "done"));
+        updateDOM("inProgress-counter", countTasksByStatus(tasks, "in-progress"));
+        updateDOM("awaitingFeedback-counter", countTasksByStatus(tasks, "feedback"));
+        updateDOM("urgency-counter", countUrgentTasks(tasks));
+        updateDOM("inBord-counter", tasks.length);
+        const deadline = findEarliestUrgentDate(tasks);
+        updateDOM("deadline", deadline ? new Date(deadline).toLocaleDateString("de-DE") : "No");
+        document.querySelector(".summary-section").style.visibility = "visible";
+        document.querySelector(".title-section").style.visibility = "visible";
+  }
 
 /**
  * Updates the #userName DOM element with the currently logged-in user's name.
@@ -154,15 +153,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+/**
+ * Retrieves the user's name from localStorage.
+ * @returns {string} The user's name from localStorage, or an empty string if not found.
+ */
 function getUserNameFromStorage() {
     return JSON.parse(localStorage.getItem("name")) || "";
 }
 
+/**
+ * Sets the user's name in the DOM element with ID "userName".
+ * @param {string} name 
+ */
 function setUserName(name) {
     const el = document.getElementById("userName");
     if (el) el.textContent = name === "Guest" ? "" : name;
 }
 
+/**
+ * Sets a greeting message in the DOM element with ID "greetUser" based on the user's name and time of day.
+ * @param {string} name 
+ */
 function setGreeting(name) {
     const greeting = getGreeting();
     const el = document.getElementById("greetUser");
@@ -174,6 +185,9 @@ function setGreeting(name) {
     }
 }
 
+/**
+ * Handles the mobile greeting display by showing the user container for 2 seconds before revealing the summary and title sections.
+ */
 function showGreetingMobile() {
     const userContainer = document.querySelector(".user");
     const summarySection = document.querySelector(".summary-section");
